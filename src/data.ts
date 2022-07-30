@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export enum ReportType {
   INCOME = 'income',
   EXPENSE = 'expense',
@@ -24,6 +25,7 @@ export const data = {
   ],
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Data {
   report: {
     id: string;
