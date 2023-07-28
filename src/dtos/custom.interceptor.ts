@@ -8,6 +8,7 @@ export class CustomInterceptor implements NestInterceptor {
   ): Observable<any> | Promise<Observable<any>> {
     return next.handle().pipe(
       map((data) => {
+        console.log(data);
         const response = {
           ...data,
           createdAt: data.created_at,

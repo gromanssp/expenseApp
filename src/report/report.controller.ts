@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Delete, Get, HttpCode, Param, ParseEnumPipe, ParseUUIDPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Param, ParseEnumPipe, ParseUUIDPipe, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ReportType } from 'src/data';
 import { CreateReportDto, UpdateReportDto, ResponseReportDto } from 'src/dtos/report.dto';
 import { ReportService } from './report.service';
@@ -25,6 +25,7 @@ export class ReportController {
   }
 
   @Post()
+  @UsePipes(new ValidationPipe({transform: true}))
   createReport(
     @Body() {
       source,
